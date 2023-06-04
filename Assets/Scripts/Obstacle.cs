@@ -16,7 +16,7 @@ public class Obstacle : MonoBehaviour
         
     }
 
-    public virtual void HandleCollision() {
+    public virtual void HandleCollision(Collision other) {
         Debug.Log("Player Collided with Obstacle");
     }
 
@@ -24,7 +24,7 @@ public class Obstacle : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            HandleCollision();
+            HandleCollision(other);
         }
     }
 }

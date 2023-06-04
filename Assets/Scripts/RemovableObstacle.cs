@@ -6,9 +6,9 @@ public class RemovableObstacle : Obstacle
 {
     [SerializeField]
     private GameObject particle;
-    public override void HandleCollision()
+    public override void HandleCollision(Collision other)
     {
-        Debug.Log("Player Collided with Destructable Obstacle");
+        base.HandleCollision(other);
         StartCoroutine(Explosion());
     }
 
